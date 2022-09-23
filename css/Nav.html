@@ -1,42 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Mix Fruit Juicer</title>
 </head>
 <body style="max-height: 1500;">
-<div class="topnav" id="myTopnav">
-    <a class="active" onclick="window.parent.location = '../home.html'"><i
-            class="fa fa-fw fa-home"></i> Home</a>
-    <a onclick="window.parent.location = '../Order.html'"><i class="fa fa-fw fa-search"></i>
-        Order</a>
-    <a  onclick="window.parent.location = '../ContactUs.html'"><i class="fa fa-fw fa-envelope"></i>
-        Contact Us</a>
-        <a  onclick="window.parent.location = '../Feedback.html'"><i class="fa fa-fw fa-envelope"></i>
+    <div class="topnav" id="myTopnav">
+        <a class="abc active" onclick="window.parent.location = '../home.html'"><i class="fa fa-fw fa-home"></i> Home</a>
+        <a class="abc" onclick="window.parent.location = '../Order.html'"><i class="fa fa-fw fa-search"></i>
+            Order</a>
+        <a class="abc" onclick="window.parent.location = '../ContactUs.html'"><i class="fa fa-fw fa-envelope"></i>
+            Contact Us</a>
+        <a class="abc" onclick="window.parent.location = '../Feedback.html'"><i class="fa fa-fw fa-envelope"></i>
             Feedback</a>
-    <div class="dropdown">
-        <button class="dropbtn">Login
-            <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-            <a onclick="window.parent.location = '../Profile.html'">Profile</a>
-            <a onclick="window.parent.location = '../Logout.html'">Logout</a>
+        <div class="dropdown">
+            <button class="a dropbtn">Login
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a class="abc" onclick="window.parent.location = '../Profile.html'">Profile</a>
+                <a class="abc" onclick="window.parent.location = '../Logout.html'">Logout</a>
+            </div>
         </div>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
     </div>
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
-</div>
 </body>
 <style>
     .topnav {
         background-color: #333;
         overflow: auto;
-        max-width:360px;
+        max-width: 360px;
     }
-
     /* Style the links inside the navigation bar */
     .topnav a {
         float: left;
@@ -49,7 +45,7 @@
     }
 
     /* Add an active class to highlight the current page */
-    .active {
+    .active{
         background-color: #04AA6D;
         color: white;
     }
@@ -62,7 +58,7 @@
     /* Dropdown container - needed to position the dropdown content */
     .dropdown {
         float: left;
-        
+
     }
 
     /* Style the dropdown button to fit inside the topnav */
@@ -90,7 +86,7 @@
     /* Style the links inside the dropdown */
     .dropdown-content a {
         float: none;
-        color: black;
+        color: rgb(14, 14, 14);
         padding: 12px 12px;
         text-decoration: none;
         display: block;
@@ -107,7 +103,7 @@
     /* Add a grey background to dropdown links on hover */
     .dropdown-content a:hover {
         background-color: #ddd;
-        color: black;
+        color: white;
     }
 
     /* Show the dropdown menu when the user moves the mouse over the dropdown button */
@@ -171,5 +167,15 @@
             x.className = "topnav";
         }
     }
+    var btnContainer = document.getElementById("myTopnav");
+    var btns = btnContainer.getElementsByClassName("abc");
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function () {
+            var current = document.getElementsByClassName("active");
+            current[0].className = current[0].className.replace("active", "");
+            this.className += "active";
+        });
+    }       
 </script>
+
 </html>
