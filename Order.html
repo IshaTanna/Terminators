@@ -45,10 +45,13 @@
         }
         FJ.onchange = function(evt){
             if(evt.target.value>100){
-                evt.target.value = 100
+                evt.target.value = 100;
+            }
+            if((evt.target.value)%5!=0){
+                var ans = Math.floor((evt.target.value)/5);
+                evt.target.value = ans*5;
             }
             SJ.value = 100-evt.target.value;
-            document.getElementById("msg").innerHTML=SJ.value;
        }
         SJ.onchange = function(evt){
             if(evt.target.value>100){
